@@ -9,12 +9,14 @@ import htmlmin from 'gulp-html-minify'
 import imagemin from 'gulp-imagemin'
 import browser from 'browser-sync'
 
+browser.create()
+
 const sass = sassGulp(sassComp)
 
 const { src, dest, series, watch, parallel } = gulp
 
-export const script = () =>
-  src('src/js/*.js').pipe(uglify.default()).pipe(dest('dist/js'))
+export const html = () =>
+  src('src/**/*.html').pipe(htmlmin()).pipe(dest('dist')).pipe(browser.stream())
 
 export const style = () =>
   src('src/sass/style.sass')
@@ -22,32 +24,49 @@ export const style = () =>
     .pipe(concat('style.min.css'))
     .pipe(dest('src/css'))
     .pipe(dest('dist/css'))
+    .pipe(browser.stream())
 
-export const font = () =>
-  src('src/fonts/*.woff2').pipe(woff2()).pipe(dest('dist/fonts'))
-
-export const html = () =>
-  src('src/**/*.html').pipe(htmlmin()).pipe(dest('dist'))
+export const script = () =>
+  src(['!src/js/main.min.js', 'src/js/*.js'])
+    .pipe(uglify.default())
+    .pipe(concat('main.min.js'))
+    .pipe(dest('src/js'))
+    .pipe(dest('dist/js'))
+    .pipe(browser.stream())
 
 export const image = () =>
   src('src/**/*.{webp,png,jpeg,jpg}').pipe(imagemin()).pipe(dest('dist'))
 
 export const video = () => src('src/video/*.webm').pipe(dest('dist/video'))
 
+export const font = () =>
+  src('src/fonts/*.{ttf,woff2}')
+    .pipe(woff2())
+    .pipe(dest('src/fonts'))
+    .pipe(dest('dist/fonts'))
+
 export const cleanDist = () => src('dist').pipe(clean())
 
+export const watching = () => {
+  watch('src/sass/*.sass', style)
+  watch(['!src/js/main.min.js', 'src/js/*.js'], script)
+  watch('src/**/*.html', html)
+}
+
 export const startSrc = () =>
-  browser.create().init({
+  browser.init({
     server: {
       baseDir: 'src',
     },
   })
 
 export const startDist = () =>
-  browser.create().init({
+  browser.init({
     server: {
       baseDir: 'dist',
     },
   })
 
-export default series(cleanDist, script, style, font, html, image, video)
+export const work = parallel(startSrc, watching)
+
+export default series(cleanDist, html, style, script, image, video, font)

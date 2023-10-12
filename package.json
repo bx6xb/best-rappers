@@ -5,15 +5,16 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
+    "html": "gulp html",
     "style": "gulp style",
     "script": "gulp script",
-    "font": "gulp font",
-    "html": "gulp html",
     "image": "gulp image",
     "video": "gulp video",
+    "font": "gulp font",
     "start1": "gulp startSrc",
     "start2": "gulp startDist",
-    "build": "gulp"
+    "build": "gulp",
+    "work": "gulp work"
   },
   "repository": {
     "type": "git",

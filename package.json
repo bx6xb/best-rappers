@@ -1,0 +1,41 @@
+{
+  "type": "module",
+  "name": "best-rappers-website-rebuild",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "style": "gulp style",
+    "script": "gulp script",
+    "font": "gulp font",
+    "html": "gulp html",
+    "image": "gulp image",
+    "video": "gulp video",
+    "start1": "gulp startSrc",
+    "start2": "gulp startDist",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bx6xb/best-rappers.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bx6xb/best-rappers.github.io/issues"
+  },
+  "homepage": "https://github.com/bx6xb/best-rappers.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-minify": "^0.0.14",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-uglify-es": "^3.0.0",
+    "sass": "^1.69.3"
+  }
+}

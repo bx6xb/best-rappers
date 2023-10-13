@@ -11,8 +11,8 @@
     "image": "gulp image",
     "video": "gulp video",
     "font": "gulp font",
-    "start1": "gulp startSrc",
-    "start2": "gulp startDist",
+    "src": "gulp startSrc",
+    "dist": "gulp startDist",
     "build": "gulp",
     "work": "gulp work"
   },

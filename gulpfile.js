@@ -28,8 +28,8 @@ export const style = () =>
 
 export const script = () =>
   src(['!src/js/main.min.js', 'src/js/*.js'])
-    .pipe(uglify.default())
     .pipe(concat('main.min.js'))
+    .pipe(uglify.default())
     .pipe(dest('src/js'))
     .pipe(dest('dist/js'))
     .pipe(browser.stream())

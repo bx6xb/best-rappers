@@ -1,15 +1,17 @@
+// Common styles
 * 
     padding: 0
     margin: 0
     box-sizing: border-box
 body 
     position: relative
+    background: $orange
 html::-webkit-scrollbar
     width: 15px
 html::-webkit-scrollbar-thumb
     background-color: $orange
 html::-webkit-scrollbar-track 
-  background-color: $gray
+  background-color: $white
 header, nav
     width: 100%
 #hamburger
@@ -60,20 +62,6 @@ header
         &:hover 
             background-color: $orange 
             color: $white
-.menu-choice
-    width: 100%
-    display: flex
-    list-style: none
-    margin-top: 30px
-    justify-content: center
-    align-items: center
-    li 
-        padding: 20px 
-        font-size: 45px
-        font-family: $italic
-        cursor: pointer
-#bio 
-    text-decoration: underline
 .shadow
     background-color: rgba(0, 0, 0, 0.5)
     position: absolute
@@ -83,16 +71,11 @@ header
     width: 100%
 #selected
     color: $white
-section 
-    width: 100% 
-    min-height: 100vh
-    position: relative
+.promo
+    min-height: 100px
     display: flex
     align-items: center
     justify-content: space-around
-    flex-direction: column
-.promo
-    min-height: 100px
     &-header
         font-size: 140px
         text-align: center
@@ -105,6 +88,30 @@ section
         position: absolute
         width: 600px
         filter: opacity(0.6)
+section 
+    width: 100% 
+    min-height: 100vh
+    position: relative
+    // display: flex
+    // align-items: center
+    // justify-content: space-around
+    // flex-direction: column
+footer 
+    width: 100%
+    height: 300px
+    background-color: $black
+    display: flex
+    justify-content: center
+    align-items: center
+    a
+        height: 75%
+        img
+            height: 100%
+            transition: .3s
+            &:hover 
+                transform: scale(1.1)
+
+// Index.html styles
 #pop-smoke
     background: url('../img/background/pop_smoke.webp') center center / cover no-repeat fixed 
 #playboi-carti
@@ -136,10 +143,11 @@ section
         &:hover 
             transform: scale(1.1)
     &-avatar
-        border: 5px solid $white
+        border: 5px solid $black
         width: 350px
         height: 350px
         transition: .3s
+        border-radius: 10px
         &:hover
             transform: scale(1.1)
     &-desc
@@ -150,8 +158,26 @@ section
             font-family: $light
             font-size: 30px
             line-height: 35px
+
+// Rapper's pages styles
+.menu-choice
+    margin-top: 30px
+    ul
+        width: 100%
+        display: flex
+        list-style: none
+        margin-top: 30px
+        justify-content: center
+        align-items: center
+        li 
+            padding: 20px 
+            font-size: 45px
+            font-family: $italic
+            cursor: pointer
+#bio 
+    text-decoration: underline
 #biography-section
-    display: block
+    display: none
     padding: 30px
     hr
         margin-bottom: 20px
@@ -160,19 +186,23 @@ section
     padding: 30px
     display: none
 #photos-section
-    display: none
-    grid-template: repeat(auto-fill, 1fr) / repeat(auto-fill, 1fr)
+    display: flex
+    flex-direction: column
     width: 80%
     min-height: 100px
     padding: 30px
     margin: 0 auto
-    img
+    hr 
+        margin-bottom: 20px
+    .photo
         width: 600px
-        padding: 20px
         transition: .3s
         cursor: pointer
+        margin-bottom: 20px
+        display: block  
+        margin: 0 auto 20px 
         &:hover 
-            transform: scale(1.1)
+            transform: scale(1.05)
 .album 
     display: flex
     justify-content: space-around
@@ -221,17 +251,3 @@ section
     justify-content: center
     &-img 
         height: 90%
-footer 
-    width: 100%
-    height: 300px
-    background-color: $black
-    display: flex
-    justify-content: center
-    align-items: center
-    a
-        height: 75%
-        img
-            height: 100%
-            transition: .3s
-            &:hover 
-                transform: scale(1.1)

@@ -1,253 +1,157 @@
-// Common styles
+// Default styles
 * 
     padding: 0
     margin: 0
     box-sizing: border-box
-body 
-    position: relative
-    background: $orange
+
+// Scrollbar styles
 html::-webkit-scrollbar
     width: 15px
 html::-webkit-scrollbar-thumb
     background-color: $orange
 html::-webkit-scrollbar-track 
   background-color: $white
-header, nav
+
+// Index.hmtl styles
+.navigation 
     width: 100%
-#hamburger
-    width: 50px
-    height: 50px
-    position: fixed
-    top: 30px
-    right: 30px 
-    display: none
-    flex-direction: column 
-    justify-content: space-around
-    z-index: 10
-    span 
-        width: 100%
-        height: 5px 
-        background-color: $orange
-        transition: .3s
-header 
-    background-color: rgba(0, 0, 0, 0.3)
-    position: fixed
-    z-index: 10
-    transition: .3s
-    &:hover 
-        background-color: rgba(0, 0, 0, 0.75)
-.menu
     height: 75px
-    min-width: 1px
+    position: fixed 
+    border-bottom: 1px solid $orange
+    background-color: rgba(0, 0, 0, 0.3)
+    z-index: 5
+.menu 
+    width: 100%
+    height: 75px
     display: flex
     list-style: none
-    border-bottom: 1px solid $orange
-    transition: .3s
-    &-item 
-        width: 100%
-        height: 100%
+    justify-content: space-between
+    align-items: center
     &-link 
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 100%
-        height: 100%
-        text-decoration: none 
-        font-size: 35px
         font-family: $light
+        text-decoration: none
+        font-size: 30px
         color: $orange
         transition: .3s
-        text-align: center
-        scroll-behavior: smooth
         &:hover 
-            background-color: $orange 
             color: $white
+section, .promo 
+    width: 100%
+    height: 1080px
+    position: relative
+    overflow: hidden
+.promo
+    display: flex
+    justify-content: center
+    align-items: center
+section, .footer 
+    padding: 70px 0 105px 0
+section, .footer
+    .container 
+        height: 100%
+        position: relative
+        z-index: 1
+        .row
+            height: 100%
+.footer 
+    width: 100%
+    height: 568px
+    background-color: $black 
+    position: relative
+    text-align: center
+    .sign
+        position: absolute
+        width: 1027px
+        height: 539px
+        opacity: 0.2
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+    &-header 
+        color: $white
+        text-align: center
+        font-family: $light
+        font-size: 40px
+        margin-bottom: 20px
+    &-sep
+        width: 196px
+        height: 3px
+        border-radius: 3px
+        background: $orange
+        margin: 0 auto 20px auto
+    ul 
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        li 
+            margin-bottom: 20px
+    a
+        text-decoration: none 
+        color: $white
+        text-align: center
+        font-family: $light
+        font-size: 35px
+#drake 
+    background: url('../img/background/drake.webp') fixed
+    background-position: center center 
+    background-size: cover
+#pop-smoke 
+    background: url('../img/background/pop_smoke.webp') fixed
+    background-position: center center 
+    background-size: cover
+#travis-scott
+    background: url('../img/background/travis_scott.webp') fixed
+    background-position: center center 
+    background-size: cover
+#playboi-carti
+    background: url('../img/background/playboi_carti.webp') fixed
+    background-position: center center 
+    background-size: cover
+#yeat
+    background: url('../img/background/yeat.webp') fixed
+    background-position: center center 
+    background-size: cover
+#lil-uzi-vert
+    background: url('../img/background/lil_uzi_vert.webp') fixed
+    background-position: center center 
+    background-size: cover
+video 
+    position: absolute
+    height: 100%
+    z-index: -1
 .shadow
-    background-color: rgba(0, 0, 0, 0.5)
     position: absolute
     width: 100%
     height: 100%
-#video
-    width: 100%
-#selected
-    color: $white
-.promo
-    min-height: 100px
-    display: flex
-    align-items: center
-    justify-content: space-around
-    &-header
-        font-size: 140px
-        text-align: center
-        font-family: $italic
-        position: absolute
-        z-index: 1
-        color: $white
-        filter: opacity(0.6)
-    &-logo
-        position: absolute
-        width: 600px
-        filter: opacity(0.6)
-section 
-    width: 100% 
-    min-height: 100vh
-    position: relative
-    // display: flex
-    // align-items: center
-    // justify-content: space-around
-    // flex-direction: column
-footer 
-    width: 100%
-    height: 300px
-    background-color: $black
-    display: flex
-    justify-content: center
-    align-items: center
-    a
-        height: 75%
-        img
-            height: 100%
-            transition: .3s
-            &:hover 
-                transform: scale(1.1)
-
-// Index.html styles
-#pop-smoke
-    background: url('../img/background/pop_smoke.webp') center center / cover no-repeat fixed 
-#playboi-carti
-    background: url('../img/background/playboi_carti.webp') center center / cover no-repeat fixed
-#yeat
-    background: url('../img/background/yeat.webp') center center / cover no-repeat fixed 
-#travis-scott
-    background: url('../img/background/travis_scott.webp') center center / cover no-repeat fixed 
-#drake
-    background: url('../img/background/drake.webp') center center / cover no-repeat fixed 
-#lil-uzi-vert
-    background: url('../img/background/lil_uzi_vert.webp') center center / cover no-repeat fixed  
-.rapper
-    width: 100% 
-    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    top: 0
+h1 
+    color: rgba(255, 255, 255, 0.60)
+    text-align: center
+    font-family: $bold
+    font-size: 140px
     position: relative
     z-index: 1
+.rapper
     display: flex
-    justify-content: center
+    flex-direction: column 
+    justify-content: space-between
+    align-items: center
     &-name 
-        color: $white 
+        color: $white
         text-align: center
+        font-family: $light
         font-size: 110px
-        font-family: $thin
-        transition: .3s
-        position: relative
-        z-index: 1
-        margin-top: 30px
-        &:hover 
-            transform: scale(1.1)
-    &-avatar
-        border: 5px solid $black
+    &-avatar 
         width: 350px
         height: 350px
-        transition: .3s
-        border-radius: 10px
-        &:hover
-            transform: scale(1.1)
-    &-desc
-        width: 60%
-        padding: 20px
-        &-text 
-            color: $white 
-            font-family: $light
-            font-size: 30px
-            line-height: 35px
-
-// Rapper's pages styles
-.menu-choice
-    margin-top: 30px
-    ul
-        width: 100%
-        display: flex
-        list-style: none
-        margin-top: 30px
-        justify-content: center
-        align-items: center
-        li 
-            padding: 20px 
-            font-size: 45px
-            font-family: $italic
-            cursor: pointer
-#bio 
-    text-decoration: underline
-#biography-section
-    display: none
-    padding: 30px
-    hr
-        margin-bottom: 20px
-#music-section
-    min-height: 200px
-    padding: 30px
-    display: none
-#photos-section
-    display: flex
-    flex-direction: column
-    width: 80%
-    min-height: 100px
-    padding: 30px
-    margin: 0 auto
-    hr 
-        margin-bottom: 20px
-    .photo
-        width: 600px
-        transition: .3s
-        cursor: pointer
-        margin-bottom: 20px
-        display: block  
-        margin: 0 auto 20px 
-        &:hover 
-            transform: scale(1.05)
-.album 
-    display: flex
-    justify-content: space-around
-    align-items: center
-    &-name 
-        text-align: center
-        font-size: 50px
-        font-family: $light
-        margin: 30px
-    &-img 
-        width: 250px
-        margin: 30px
-    &-desc 
-        font-size: 25px
-        font-family: $light
-        width: 70%
-        padding: 30px
+        border-radius: 50px
         display: block
         margin: 0 auto
-.text
-    font-size: 24px
-    line-height: 30px
-    display: block
-    width: 70%
-    margin: 0 auto
-    font-family: $light
-    &-header 
-        margin: 50px 0 15px 0
-        font-size: 50px
+    &-info
+        color: $white
         font-family: $light
-        &-main 
-            font-size: 75px
-            margin: 30px 0 15px
-            text-align: center
-            font-family: $italic
-    hr 
-        margin-bottom: 20px
-#big-picture 
-    width: 100%
-    height: 100vh
-    position: fixed
-    background-color: rgba(0, 0, 0, 0.7)
-    z-index: 11
-    display: none
-    align-items: center
-    justify-content: center
-    &-img 
-        height: 90%
+        font-size: 35px
+        a
+            text-decoration: none 

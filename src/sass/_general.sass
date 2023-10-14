@@ -169,15 +169,20 @@ h1
     display: grid
     width: 100%
     opacity: 0.2
-    &-playboi-carti
-        grid-template-rows: repeat(2, 580px)
-        grid-template-columns: repeat(2, 580px)
-        grid-gap: 160px
-        transform: translateY(var(--scrolled))
     &-drake
-        grid-template-rows: repeat(4, 300px)
-        grid-template-columns: repeat(4, 300px)
-        grid-gap: 30px
+        grid-template-rows: repeat(4, 320px)
+        grid-template-columns: repeat(4, 320px)
+        grid-gap: 12px
+        transform: translateY(var(--scrolled))
+    &-pop-smoke, &-travis-scott, &-playboi-carti
+        grid-template-rows: repeat(3, 650px)
+        grid-template-columns: repeat(2, 650px)
+        grid-gap: 20px
+        transform: translateY(var(--scrolled))
+    &-yeat, &-lil-uzi-vert
+        grid-template-rows: repeat(3, 430px)
+        grid-template-columns: repeat(3, 430px)
+        grid-gap: 15px
         transform: translateY(var(--scrolled))
     img 
         width: 90%

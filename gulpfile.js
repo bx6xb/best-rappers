@@ -27,7 +27,7 @@ export const style = () =>
     .pipe(browser.stream())
 
 export const script = () =>
-  src(['!src/js/main.min.js', 'src/js/*.js'])
+  src(['src/js/*.js', '!src/js/main.min.js'])
     .pipe(concat('main.min.js'))
     .pipe(uglify.default())
     .pipe(dest('src/js'))
@@ -49,7 +49,7 @@ export const cleanDist = () => src('dist').pipe(clean())
 
 export const watching = () => {
   watch('src/sass/*.sass', style)
-  watch(['!src/js/main.min.js', 'src/js/*.js'], script)
+  watch(['src/js/*.js', '!src/js/main.min.js'], script)
   watch('src/**/*.html', html)
 }
 

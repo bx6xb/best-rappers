@@ -6,6 +6,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "html": "gulp html",
+    "pug": "gulp pug",
     "style": "gulp style",
     "script": "gulp script",
     "image": "gulp image",
@@ -34,6 +35,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-html-minify": "^0.0.14",
     "gulp-imagemin": "^8.0.0",
+    "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify-es": "^3.0.0",

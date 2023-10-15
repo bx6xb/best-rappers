@@ -8,6 +8,7 @@ import woff2 from 'gulp-ttf2woff2'
 import htmlmin from 'gulp-html-minify'
 import imagemin from 'gulp-imagemin'
 import browser from 'browser-sync'
+import pugComp from 'gulp-pug'
 
 browser.create()
 
@@ -17,6 +18,12 @@ const { src, dest, series, watch, parallel } = gulp
 
 export const html = () =>
   src('src/**/*.html').pipe(htmlmin()).pipe(dest('dist')).pipe(browser.stream())
+
+export const pug = () =>
+  src('src/pug/*.pug')
+    .pipe(pugComp())
+    .pipe(dest('src/html'))
+    .pipe(dest('dist/html'))
 
 export const style = () =>
   src('src/sass/style.sass')
@@ -51,6 +58,7 @@ export const watching = () => {
   watch('src/sass/*.sass', style)
   watch(['src/js/*.js', '!src/js/main.min.js'], script)
   watch('src/**/*.html', html)
+  watch('src/pug/*.pug', pug)
 }
 
 export const startSrc = () =>

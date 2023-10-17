@@ -37,24 +37,28 @@ html::-webkit-scrollbar-track
         transition: .3s
         &:hover 
             color: $white
+.selected 
+    color: $white
 section, .promo 
-    width: 100%
-    height: 1080px
     position: relative
     overflow: hidden
 .promo
+    height: 1080px
     display: flex
     justify-content: center
     align-items: center
+    img
+        width: 600px
 section, .footer 
     padding: 70px 0 105px 0
-section, .footer
-    .container 
+    .container
         height: 100%
         position: relative
         z-index: 1
         .row
             height: 100%
+section.rapper-section
+    height: 1080px
 .footer 
     width: 100%
     height: 568px
@@ -191,11 +195,71 @@ h1
         transform: rotate(20deg)
 
 // Rapper pages style
-.bio-albums-gallery
-    width: 100%
+section.bio-albums-gallery
     background-color: $orange
     color: $black
-    h2 
+    min-height: 1200px
+    h2
         text-align: center
         font-family: $medium
         font-size: 70px
+        text-align: center
+        margin: 0 90px  
+.switcher 
+    margin: 0 auto
+    height: 70px
+    min-width: 300px
+    display: flex 
+    justify-content: center
+    margin-bottom: 60px
+    img
+        width: 110px
+        height: 60px
+        cursor: pointer
+h3
+    color: $black
+    font-family: $regular
+    font-size: 50px
+    line-height: 60px
+.sep
+    width: 100%
+    height: 3px
+    border-radius: 3px
+    background: $black
+.bio
+    width: 100%
+    color: $black
+    font-family: $light
+    font-size: 24px
+    line-height: 30px
+    h3
+        margin: 50px 0 20px 0
+    .sep
+        margin-bottom: 20px
+.albums
+    h3
+        margin-bottom: 40px
+        text-align: center
+    img
+        display: block
+        margin: 0 auto
+        margin-bottom: 40px
+        width: 300px
+    .album-desc
+        width: 100%
+        color: $black
+        font-family: $light
+        font-size: 24px
+        line-height: 30px
+    .sep
+        margin: 50px 0 50px 0
+.gallery
+    img
+        width: 100%
+        margin-bottom: 50px
+.flipped
+    transform: scale(-1, 1)
+.hide
+    display: none
+.show
+    display: block

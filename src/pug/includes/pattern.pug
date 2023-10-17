@@ -7,7 +7,7 @@ hmtl
         meta(charset="UTF-8" )
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title
-            |Best rappers | #[block title]
+            block title
         link(rel="icon" href="../img/icons/icon.png")
         link(rel="stylesheet" href="../css/bootstrap-grid.min.css")
         link(rel="stylesheet" href="../css/style.min.css")
@@ -16,5 +16,23 @@ hmtl
         include header.pug
         
         section.bio-albums-gallery
+            .container 
+                .row 
+                    .col-12 
+                        .switcher 
+                            img(src="../img/icons/arrow.png" alt="left arrow" title="left arrow" class="left-arrow")
+                            h2.switcher-header
+                                |Biography
+                            img(src="../img/icons/arrow.png" alt="right arrow" title="right arrow" class="flipped right-arrow")
+                    .col-12.rapper-info-section
+                        .bio
+                            block bio 
+                    .col-12.rapper-info-section.hide
+                        .albums
+                            block albums 
+                    .col-12.rapper-info-section.hide
+                        .gallery
+                            block gallery
         
         include footer.pug
+        script(src='../js/main.min.js')

@@ -58,7 +58,7 @@ export const watching = () => {
   watch('src/sass/*.sass', style)
   watch(['src/js/*.js', '!src/js/main.min.js'], script)
   watch('src/**/*.html', html)
-  watch('src/pug/*.pug', pug)
+  watch('src/pug/**/*.pug', pug)
 }
 
 export const startSrc = () =>

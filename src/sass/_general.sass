@@ -5,7 +5,10 @@
     box-sizing: border-box
 :root
     --scrolled: 0px
-
+ul
+    margin: 0
+    padding: 0
+    list-style: none
 // Scrollbar styles
 html::-webkit-scrollbar
     width: 15px
@@ -21,12 +24,11 @@ html::-webkit-scrollbar-track
     position: fixed 
     border-bottom: 1px solid $orange
     background-color: rgba(0, 0, 0, 0.3)
-    z-index: 5
+    z-index: 4
 .menu 
     width: 100%
     height: 75px
     display: flex
-    list-style: none
     justify-content: space-between
     align-items: center
     &-link 
@@ -46,32 +48,27 @@ section, .promo
     height: 1080px
     display: flex
     justify-content: center
-    align-items: center
-    img
-        width: 600px
+    align-items: center  
 .logo
+    width: 600px
     position: relative
     z-index: 2
 section, .footer 
     padding: 70px 0 105px 0
     .container
-        height: 100%
         position: relative
         z-index: 1
-        .row
-            height: 100%
 section.rapper-section
     height: 1080px
 .footer 
     width: 100%
-    height: 568px
+    overflow: hidden
     background-color: $black 
     position: relative
     text-align: center
     .sign
         position: absolute
-        width: 1027px
-        height: 539px
+        width: 70%
         opacity: 0.2
         left: 50%
         top: 50%
@@ -83,7 +80,7 @@ section.rapper-section
         font-size: 40px
         margin-bottom: 20px
     &-sep
-        width: 196px
+        width: 200px
         height: 3px
         border-radius: 3px
         background: $orange
@@ -155,16 +152,19 @@ h1
         text-align: center
         font-family: $medium
         font-size: 110px
+        margin-bottom: 30px
     &-avatar 
         width: 350px
         height: 350px
         border-radius: 50px
         display: block
         margin: 0 auto
+        margin-bottom: 30px
     &-info
         color: $white
         font-family: $light
         font-size: 35px
+        line-height: 100%
         a
             text-decoration: none 
             color: $orange
@@ -202,20 +202,21 @@ section.bio-albums-gallery
     background-color: $orange
     color: $black
     min-height: 1200px
-    h2
-        text-align: center
-        font-family: $medium
-        font-size: 70px
-        text-align: center
-        margin: 0 90px  
 .switcher 
     margin: 0 auto
     height: 70px
     min-width: 300px
     display: flex 
     justify-content: center
+    align-items: center
     margin-bottom: 60px
     user-select: none
+    &-header
+        text-align: center
+        font-family: $medium
+        font-size: 70px
+        text-align: center
+        margin: 0 90px
     img
         width: 110px
         height: 60px
@@ -266,6 +267,34 @@ h3
         cursor: pointer
         &:hover 
             transform: scale(1.1)
+.big-picture
+    position: fixed
+    top: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.6)
+    z-index: 10
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+        width: 80%
+.hamb
+    width: 50px
+    display: none
+    align-items: center
+    flex-direction: column
+    position: fixed
+    top: 30px
+    right: 30px
+    z-index: 5
+    cursor: pointer
+    span
+        width: 100%
+        height: 5px
+        border-radius: 3px
+        background: $orange
+        margin-bottom: 8px
 .flipped
     transform: scale(-1, 1)
 .hide

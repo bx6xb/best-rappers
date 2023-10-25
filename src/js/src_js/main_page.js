@@ -6,10 +6,11 @@ const root = document.querySelector(':root')
 const parallaxIndex = 4
 
 // Functions
-const makeParallax = (elem, index) => {
-    elem.style.top = `${Math.floor(
-      elem.getBoundingClientRect().top / index / parallaxIndex
-    )}px`
+const makeParallax = (elem, index, offset = 0) => {
+  elem.style.top = `${
+    Math.floor(elem.getBoundingClientRect().top / index / parallaxIndex) +
+    offset
+  }px`
 }
 
 // Event listeners
@@ -28,7 +29,7 @@ parallax.forEach((item) => {
     parseInt(getComputedStyle(item).getPropertyValue('height'))
   )
   if (item.classList.contains('parralax-long')) {
-    makeParallax(item, 3)
+    makeParallax(item, 3, 100)
   } else {
     makeParallax(item, 1.05)
   }

@@ -9,6 +9,7 @@ ul
     margin: 0
     padding: 0
     list-style: none
+
 // Scrollbar styles
 html::-webkit-scrollbar
     width: 15px
@@ -25,6 +26,8 @@ html::-webkit-scrollbar-track
     border-bottom: 1px solid $orange
     background-color: rgba(0, 0, 0, 0.3)
     z-index: 4
+.navigation.left
+    left: 0
 .menu 
     width: 100%
     height: 75px
@@ -147,19 +150,18 @@ h1
     flex-direction: column 
     justify-content: space-between
     align-items: center
+    height: 905px
     &-name 
         color: $white
         text-align: center
         font-family: $medium
         font-size: 110px
-        margin-bottom: 30px
     &-avatar 
         width: 350px
         height: 350px
         border-radius: 50px
         display: block
         margin: 0 auto
-        margin-bottom: 30px
     &-info
         color: $white
         font-family: $light
@@ -201,26 +203,41 @@ h1
 section.bio-albums-gallery
     background-color: $orange
     color: $black
-    min-height: 1200px
+    min-height: 500px
 .switcher 
     margin: 0 auto
-    height: 70px
-    min-width: 300px
+    height: 115px
+    width: 500px
     display: flex 
     justify-content: center
     align-items: center
+    flex-direction: column
     margin-bottom: 60px
     user-select: none
+    position: relative
     &-header
         text-align: center
         font-family: $medium
         font-size: 70px
         text-align: center
         margin: 0 90px
-    img
-        width: 110px
-        height: 60px
-        cursor: pointer
+.slider
+    width: 100%
+    appearance: none
+    background-color: transparent
+    cursor: pointer
+    opacity: 0.4
+    outline: none
+.slider::-webkit-slider-thumb
+    appearance: none
+    width: 35px
+    height: 25px
+    background-color: $orange
+    border: 2px solid $black
+    border-radius: 10px
+.slider::-webkit-slider-runnable-track
+    background-color: $black
+    border-radius: 10px
 h3
     color: $black
     font-family: $regular
@@ -277,7 +294,9 @@ h3
     display: flex
     justify-content: center
     align-items: center
-    img
+    img.width
+        height: 80%
+    img.height
         width: 80%
 .hamb
     width: 50px
@@ -295,9 +314,5 @@ h3
         border-radius: 3px
         background: $orange
         margin-bottom: 8px
-.flipped
-    transform: scale(-1, 1)
 .hide
     display: none
-.show
-    display: block

@@ -11,9 +11,6 @@
             grid-template-columns: repeat(3, 370px)
     h1
         font-size: 125px
-    .rapper
-        &-info
-            font-size: 32px
 @media (max-width: 1199px)
     .parallax 
         &-drake
@@ -27,9 +24,6 @@
             grid-template-columns: repeat(3, 310px)
     h1
         font-size: 105px
-    .rapper
-        &-info
-            font-size: 30px
 @media (max-width: 991px)
     .parallax 
         &-drake
@@ -48,6 +42,9 @@
         font-size: 81px
     .navigation 
         height: 60px
+    .rapper
+        &-info
+            font-size: 30px
     .menu 
         height: 60px
         &-link 
@@ -72,7 +69,8 @@
         border: none
         border-right: 1px solid $orange
         background-color: rgba(0, 0, 0, 0.75)
-        left: -50%
+        left: -51%
+        transition: .3s
     .menu
         display: flex
         align-items: center
@@ -83,10 +81,10 @@
         &-link 
             font-size: 30px
     .rapper
-        &-info
-            font-size: 28px
-        &-name
-            font-size: 70px
+        &-name 
+            font-size: 85px
+        &-info 
+            font-size: 27px
     .logo
         width: 90%
     .switcher
@@ -105,16 +103,14 @@
         &-avatar
             width: 300px
             height: 300px
-        &-name
-            font-size: 55px
-        &-info
-            font-size: 23px
+    .switcher
+        width: 300px
 @media (max-width: 320px) 
     h1
         font-size: 32px
-    .switcher 
+    .switcher
         &-header
-            font-size: 40px
+            font-size: 60px
     .bio
         font-size: 20px
         line-height: 25px

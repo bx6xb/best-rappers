@@ -26,10 +26,9 @@ html
                 .row 
                     .col-12 
                         .switcher 
-                            img(src="../img/icons/arrow.png" alt="left arrow" title="left arrow" class="left-arrow")
                             h2.switcher-header
                                 |Biography
-                            img(src="../img/icons/arrow.png" alt="right arrow" title="right arrow" class="flipped right-arrow")
+                            input(type="range" min="0" max="2" step="0.01" value="0" class="slider")
                     .col-12.rapper-info-section
                         .bio
                             block bio 

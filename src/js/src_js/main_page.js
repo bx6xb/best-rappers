@@ -22,12 +22,7 @@ window.addEventListener('scroll', () => {
 })
 
 // Call functions
-window.scrollTo(0, 0)
-
 parallax.forEach((item) => {
-  const halfOfItem = Math.floor(
-    parseInt(getComputedStyle(item).getPropertyValue('height'))
-  )
   if (item.classList.contains('parralax-long')) {
     makeParallax(item, 3, 100)
   } else {

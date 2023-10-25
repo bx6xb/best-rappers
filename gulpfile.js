@@ -9,6 +9,7 @@ import htmlmin from 'gulp-html-minify'
 import imagemin from 'gulp-imagemin'
 import browser from 'browser-sync'
 import pugComp from 'gulp-pug'
+import rename from 'gulp-rename'
 
 browser.create()
 
@@ -34,9 +35,9 @@ export const style = () =>
     .pipe(browser.stream())
 
 export const script = () =>
-  src(['src/js/*.js', '!src/js/main.min.js'])
-    .pipe(concat('main.min.js'))
+  src('src/js/src_js/*.js')
     .pipe(uglify.default())
+    .pipe(rename({suffix: '.min'}))
     .pipe(dest('src/js'))
     .pipe(dest('dist/js'))
     .pipe(browser.stream())
@@ -56,7 +57,7 @@ export const cleanDist = () => src('dist').pipe(clean())
 
 export const watching = () => {
   watch('src/sass/*.sass', style)
-  watch(['src/js/*.js', '!src/js/main.min.js'], script)
+  watch('src/js/src_js/*.js', script)
   watch('src/**/*.html', html)
   watch('src/pug/**/*.pug', pug)
 }

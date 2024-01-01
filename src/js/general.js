@@ -1,17 +1,10 @@
 // Page elements
-const hamb = document.querySelector('.hamb')
-const navigation = document.querySelector('.navigation')
-
-// Functions
-const toggle = (elem, cls) => {
-  elem.classList.toggle(cls)
-}
+const hamb = document.querySelector(".hamb")
+const navigation = document.querySelector(".navigation")
 
 // Event listeners
-hamb.addEventListener('click', () => {
-  if (!navigation.classList.contains('left')) {
-    toggle(navigation, 'left')
-  } else {
-    toggle(navigation, 'left')
-  }
+hamb.addEventListener("click", () => {
+  !navigation.classList.contains("left")
+    ? navigation.classList.add("left")
+    : navigation.classList.add("remove")
 })

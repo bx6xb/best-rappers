@@ -2,7 +2,6 @@ const path = require("path")
 const fs = require("fs")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const CopyPlugin = require("copy-webpack-plugin")
 
 const PAGES_DIR = "./src/pug"
 const PUG_FILES = fs
@@ -12,6 +11,12 @@ const PUG_FILES = fs
 module.exports = (env) => {
   const mode = env.development ? "development" : "production"
   const isDev = mode === "development"
+
+  const HtmlWebpackPluginSettings = {
+    inject: "body",
+    minify: !isDev,
+    favicon: "./src/img/icons/icon.png",
+  }
 
   console.log(`Current mode - ${mode}`)
 
@@ -23,7 +28,7 @@ module.exports = (env) => {
       rapperPage: path.resolve(__dirname, "./src/js/rapperPage.js"),
     },
     output: {
-      filename: "[name].[contenthash].js",
+      filename: "js/[name].[contenthash].js",
       path: path.resolve(__dirname, "./build"),
       clean: true,
     },
@@ -44,6 +49,7 @@ module.exports = (env) => {
         },
         {
           test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: "babel-loader",
             options: {
@@ -52,44 +58,63 @@ module.exports = (env) => {
           },
         },
         {
-          test: /\.(png|jpe?g|gif|svg)$/i,
-          type: "asset/resource",
-        },
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          type: "asset/resource",
-        },
-        {
           test: /\.pug$/i,
-          loader: "pug-loader",
+          use: [
+            {
+              loader: "html-loader",
+            },
+            {
+              loader: "pug-html-loader",
+            },
+          ],
         },
+        isDev
+          ? {}
+          : {
+              test: /\.(jpg|jpeg|png)$/,
+              type: "asset/resource",
+              generator: {
+                filename: "img/[contenthash][ext]",
+              },
+            },
+        isDev
+          ? {}
+          : {
+              test: /\.woff2$/,
+              type: "asset/resource",
+              generator: {
+                filename: "fonts/[contenthash][ext]",
+              },
+            },
+        isDev
+          ? {}
+          : {
+              test: /\.webm$/,
+              type: "asset/resource",
+              generator: {
+                filename: "video/[contenthash][ext]",
+              },
+            },
       ],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./src/index.pug",
         filename: "index.html",
-        inject: "body",
         chunks: ["general", "mainPage"],
+        ...HtmlWebpackPluginSettings,
       }),
       ...PUG_FILES.map(
         (page) =>
           new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
             filename: `html/${page.replace(/\.pug$/, ".html")}`,
-            inject: "body",
             chunks: ["general", "rapperPage"],
+            ...HtmlWebpackPluginSettings,
           })
       ),
       new MiniCssExtractPlugin({
-        filename: "style.css",
-      }),
-      new CopyPlugin({
-        patterns: [
-          { from: "./src/img", to: "./img" },
-          { from: "./src/video", to: "./video" },
-          { from: "./src/fonts", to: "./fonts" },
-        ],
+        filename: "css/style.min.[contenthash].css",
       }),
     ],
   }

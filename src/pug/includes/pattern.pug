@@ -1,42 +1,43 @@
 include cfg.pug
+
 block vars
 
 doctype html
 html
-    head 
+    head
         meta(charset="UTF-8" )
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title
             block title
-        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous")
         link(rel="icon" href="../img/icons/icon.png")
     body
         .hamb
-            span 
-            span 
+            span
+            span
             span
         include nav-bar.pug
         include header.pug
         .big-picture.hide
         section.bio-albums-gallery
-            .container 
-                .row 
-                    .col-12 
-                        .switcher 
+            .container
+                .row
+                    .col-12
+                        .switcher
                             h2.switcher-header
                                 |Biography
                             input(type="range" min="0" max="2" step="0.01" value="0" class="slider")
                     .col-12.rapper-info-section
                         .bio
-                            block bio 
+                            block bio
                     .col-12.rapper-info-section.hide
                         .albums
-                            block albums 
+                            block albums
                     .col-12.rapper-info-section.hide
                         .gallery
-                            .row 
+                            .row
                                 .col-lg-4.col-md-6
                                     img(src="../img/"+rapper+"/photos/1.jpg" class="gallery-photo" alt=rapper title=rapper+' photo')
                                 .col-lg-4.col-md-6

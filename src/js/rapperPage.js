@@ -1,43 +1,43 @@
 // Page elements
-const switcher = document.querySelector('.switcher')
-const switcherHeader = document.querySelector('.switcher-header')
-const slider = document.querySelector('.slider')
-const rapperInfoSection = document.querySelectorAll('.rapper-info-section')
-const bioAlbumsGallery = document.querySelector('.bio-albums-gallery')
-const gallery = document.querySelector('.gallery')
-const bigPicture = document.querySelector('.big-picture')
+const switcher = document.querySelector(".switcher")
+const switcherHeader = document.querySelector(".switcher-header")
+const slider = document.querySelector(".slider")
+const rapperInfoSection = document.querySelectorAll(".rapper-info-section")
+const bioAlbumsGallery = document.querySelector(".bio-albums-gallery")
+const gallery = document.querySelector(".gallery")
+const bigPicture = document.querySelector(".big-picture")
 
 // JS variables
-const headers = ['Biography', 'Albums', 'Gallery']
+const headers = ["Biography", "Albums", "Gallery"]
 
 // Functions
 const zoomPhoto = (elem) => {
-  const image = document.createElement('img')
+  const image = document.createElement("img")
   image.src = elem.src
   image.alt = elem.src
   window.innerWidth > window.innerHeight
-    ? image.classList.add('width')
-    : image.classList.add('height')
+    ? image.classList.add("width")
+    : image.classList.add("height")
 
   bigPicture.appendChild(image)
-  toggle(bigPicture, 'hide')
-  bigPicture.addEventListener('click', hideBigPicture)
+  bigPicture.classList.remove("hide")
+  bigPicture.addEventListener("click", hideBigPicture)
 }
 
 const hideBigPicture = () => {
-  bigPicture.innerHTML = ''
-  toggle(bigPicture, 'hide')
-  bigPicture.removeEventListener('click', hideBigPicture)
+  bigPicture.innerHTML = ""
+  bigPicture.classList.add("hide")
+  bigPicture.removeEventListener("click", hideBigPicture)
 }
 
 // Event listeners
-gallery.addEventListener('click', (e) => {
-  if (e.target.classList.contains('gallery-photo')) {
+gallery.addEventListener("click", (e) => {
+  if (e.target.classList.contains("gallery-photo")) {
     zoomPhoto(e.target)
   }
 })
 
-slider.addEventListener('change', () => {
+slider.addEventListener("change", () => {
   if (slider.value > 1.33) {
     slider.value = 2
   } else if (slider.value < 0.66) {
@@ -48,10 +48,10 @@ slider.addEventListener('change', () => {
 
   rapperInfoSection.forEach((val, i) => {
     if (i === +slider.value) {
-      val.classList.remove('hide')
+      val.classList.remove("hide")
       switcherHeader.innerHTML = headers[i]
     } else {
-      val.classList.add('hide')
+      val.classList.add("hide")
     }
   })
 })

@@ -19,7 +19,7 @@ html
             span
         include nav-bar.pug
         include header.pug
-        .big-picture.hide
+        .big-picture(hidden)
         section.bio-albums-gallery
             .container
                 .row
@@ -31,10 +31,10 @@ html
                     .col-12.rapper-info-section
                         .bio
                             block bio
-                    .col-12.rapper-info-section.hide
+                    .col-12.rapper-info-section(hidden)
                         .albums
                             block albums
-                    .col-12.rapper-info-section.hide
+                    .col-12.rapper-info-section(hidden)
                         .gallery
                             .row
                                 .col-lg-4.col-md-6

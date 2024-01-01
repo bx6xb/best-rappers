@@ -6,5 +6,5 @@ const navigation = document.querySelector(".navigation")
 hamb.addEventListener("click", () => {
   !navigation.classList.contains("left")
     ? navigation.classList.add("left")
-    : navigation.classList.add("remove")
+    : navigation.classList.remove("left")
 })

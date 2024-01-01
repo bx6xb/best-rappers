@@ -20,13 +20,13 @@ const zoomPhoto = (elem) => {
     : image.classList.add("height")
 
   bigPicture.appendChild(image)
-  bigPicture.classList.remove("hide")
+  bigPicture.removeAttribute("hidden")
   bigPicture.addEventListener("click", hideBigPicture)
 }
 
 const hideBigPicture = () => {
   bigPicture.innerHTML = ""
-  bigPicture.classList.add("hide")
+  bigPicture.setAttribute("hidden", true)
   bigPicture.removeEventListener("click", hideBigPicture)
 }
 
@@ -48,10 +48,10 @@ slider.addEventListener("change", () => {
 
   rapperInfoSection.forEach((val, i) => {
     if (i === +slider.value) {
-      val.classList.remove("hide")
+      val.removeAttribute("hidden")
       switcherHeader.innerHTML = headers[i]
     } else {
-      val.classList.add("hide")
+      val.setAttribute("hidden", true)
     }
   })
 })

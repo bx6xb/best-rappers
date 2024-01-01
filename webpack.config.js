@@ -15,7 +15,7 @@ module.exports = (env) => {
   const HtmlWebpackPluginSettings = {
     inject: "body",
     minify: !isDev,
-    favicon: "./src/img/icons/icon.png",
+    favicon: "./src/favicon.png",
   }
 
   console.log(`Current mode - ${mode}`)

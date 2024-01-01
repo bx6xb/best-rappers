@@ -4,7 +4,8 @@
   "description": "Best rappers website",
   "scripts": {
     "start": "webpack serve --env development",
-    "build": "webpack --env production"
+    "build": "webpack --env production",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",

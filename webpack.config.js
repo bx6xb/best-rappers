@@ -80,7 +80,7 @@ module.exports = (env) => {
         isDev
           ? {}
           : {
-              test: /\.woff2$/,
+              test: /\.(eot|woff2|ttf)$/,
               type: "asset/resource",
               generator: {
                 filename: "fonts/[contenthash][ext]",

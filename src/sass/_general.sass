@@ -1,8 +1,11 @@
 // Default styles
-* 
+*, *::before, *::after
     padding: 0
     margin: 0
     box-sizing: border-box
+*::selection
+    background-color: $primary
+    color: $text
 :root
     --scrolled: 0px
 ul
@@ -14,16 +17,16 @@ ul
 html::-webkit-scrollbar
     width: 15px
 html::-webkit-scrollbar-thumb
-    background-color: $orange
+    background-color: $primary
 html::-webkit-scrollbar-track 
-  background-color: $white
+  background-color: $text
 
 // Index.hmtl styles
 .navigation 
     width: 100%
     height: 75px
     position: fixed 
-    border-bottom: 1px solid $orange
+    border-bottom: 1px solid $primary
     background-color: rgba(0, 0, 0, 0.3)
     z-index: 4
 .navigation.left
@@ -35,15 +38,16 @@ html::-webkit-scrollbar-track
     justify-content: space-between
     align-items: center
     &-link 
-        font-family: $light
+        font-family: $font
+        font-weight: 300
         text-decoration: none
         font-size: 30px
-        color: $orange
+        color: $primary
         transition: .3s
         &:hover 
-            color: $white
+            color: $text
 .selected 
-    color: $white
+    color: $text
 section, .promo 
     position: relative
     overflow: hidden
@@ -66,7 +70,7 @@ section.rapper-section
 .footer 
     width: 100%
     overflow: hidden
-    background-color: $black 
+    background-color: $secondary 
     position: relative
     text-align: center
     .sign
@@ -77,16 +81,17 @@ section.rapper-section
         top: 50%
         transform: translate(-50%, -50%)
     &-header 
-        color: $white
+        color: $text
         text-align: center
-        font-family: $medium
+        font-family: $font
+        font-weight: 500
         font-size: 40px
         margin-bottom: 20px
     &-sep
         width: 200px
         height: 3px
         border-radius: 3px
-        background: $orange
+        background: $primary
         margin: 0 auto 20px auto
     ul 
         display: flex
@@ -97,13 +102,14 @@ section.rapper-section
             margin-bottom: 20px
     a
         text-decoration: none 
-        color: $white
+        color: $text
         text-align: center
-        font-family: $light
+        font-family: $font
+        font-weight: 300
         font-size: 35px
         transition: .3s
         &:hover 
-            color: $orange
+            color: $primary
 #drake 
     background: url('../img/drake/bg.jpg') fixed
     background-position: center center 
@@ -141,7 +147,8 @@ video
 h1 
     color: rgba(255, 255, 255, 0.60)
     text-align: center
-    font-family: $bold
+    font-family: $font
+    font-weight: 700
     font-size: 140px
     position: relative
     z-index: 1
@@ -152,9 +159,10 @@ h1
     align-items: center
     height: 905px
     &-name 
-        color: $white
+        color: $text
         text-align: center
-        font-family: $medium
+        font-family: $font
+        font-weight: 500
         font-size: 110px
     &-avatar 
         width: 350px
@@ -163,13 +171,14 @@ h1
         display: block
         margin: 0 auto 15px auto
     &-info
-        color: $white
-        font-family: $light
+        color: $text
+        font-family: $font
+        font-weight: 300
         font-size: 35px
         line-height: 100%
         a
             text-decoration: none 
-            color: $orange
+            color: $primary
 
 // Parallax
 .parallax 
@@ -201,8 +210,8 @@ h1
 
 // Rapper pages style
 section.bio-albums-gallery
-    background-color: $orange
-    color: $black
+    background-color: $primary
+    color: $secondary
     min-height: 500px
 .switcher 
     margin: 0 auto
@@ -217,7 +226,8 @@ section.bio-albums-gallery
     position: relative
     &-header
         text-align: center
-        font-family: $medium
+        font-family: $font
+        font-weight: 500
         font-size: 70px
         text-align: center
         margin: 0 90px
@@ -232,26 +242,28 @@ section.bio-albums-gallery
     appearance: none
     width: 35px
     height: 25px
-    background-color: $orange
-    border: 2px solid $black
+    background-color: $primary
+    border: 2px solid $secondary
     border-radius: 10px
 .slider::-webkit-slider-runnable-track
-    background-color: $black
+    background-color: $secondary
     border-radius: 10px
 h3
-    color: $black
-    font-family: $regular
+    color: $secondary
+    font-family: $font
+    font-weight: 500
     font-size: 50px
     line-height: 60px
 .sep
     width: 100%
     height: 3px
     border-radius: 3px
-    background: $black
+    background: $secondary
 .bio
     width: 100%
-    color: $black
-    font-family: $light
+    color: $secondary
+    font-family: $font
+    font-weight: 300
     font-size: 24px
     line-height: 30px
     h3
@@ -269,8 +281,9 @@ h3
         width: 300px
     .album-desc
         width: 100%
-        color: $black
-        font-family: $light
+        color: $secondary
+        font-family: $font
+        font-weight: 300
         font-size: 24px
         line-height: 30px
     .sep
@@ -312,5 +325,5 @@ h3
         width: 100%
         height: 5px
         border-radius: 3px
-        background: $orange
+        background: $primary
         margin-bottom: 8px
